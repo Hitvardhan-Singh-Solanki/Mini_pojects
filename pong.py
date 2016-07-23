@@ -1,50 +1,37 @@
-
+#Import Function
 import simplegui
 import random
-radius=10
 
+#Global variables
+radius=10
 width=1000
 height=500
-
 vel_p1=[0,0]
 vel_p2=[0,0]
 check=1
-
 score1=0
 score2=0
 direction='right'
-
-
 player1='Player 1'
 player2='Player 2'
-
 ball_position=[width/2, height/2 + 20]
 initial_velocity=[0,0]
 ball_velocity=[0,0]
 color="White"
 message=" "
 message_speed="Select Speed"
-
-
 message_width= 102
 paddle_width=8
 paddle_height= 80
-
 paddle1=[[4, (height/2 - paddle_height/2)], [4, (height/2 + paddle_height/2)]]
-
 paddle2=[[(width-paddle_width +4), (height/2 - paddle_height/2)], [(width-paddle_width+4), (height/2 + paddle_height/2)]]
 
-
+#All Sorts of functions
 def restart():
     global score1, score2, message, ball_color
 
     score1=0
     score2=0
-
-
-
-
-
 def moonwalk():
     global initial_velocity, ball_velocity, shift, message_speed, message_width
     message_speed= 'Moon Walk'
@@ -53,9 +40,6 @@ def moonwalk():
     ball_velocity[1]=random.randrange(60,120)/25
     initial_velocity[0]=random.randrange(60,120)/20
     initial_velocity[1]=random.randrange(60,120)/25
-
-
-
     new_game()
 
 def surf():
@@ -66,8 +50,6 @@ def surf():
     ball_velocity[1]=random.randrange(120,160)/25
     initial_velocity[0]=random.randrange(120,160)/20
     initial_velocity[1]=random.randrange(120,160)/25
-
-
     new_game()
 
 def blitzer():
@@ -86,14 +68,10 @@ def new_game():
     message=" "
     spawn(direction)
 
-
-
 def spawn(direction):
     global ball_position, initial_position, ball_velocity, color, ball_color
     color="White"
     message=" "
-
-
     initial_position=[width/2, height/2]
 
 
@@ -269,3 +247,7 @@ frame.add_button("Stop", stop, 100)
 frame.add_label(" ")
 frame.add_label("Hit space to Start after selecting the speed or to Resume")
 frame.start()
+
+
+#this is not my code! please make note i am only keeping it here to understand the mechanics, This Code belongs to Nitin Chouhan
+#copied from coursera discussion forum
